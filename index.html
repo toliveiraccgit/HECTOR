@@ -20,24 +20,705 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://api.fontshare.com/css?f[]=cabinet-grotesk@400,500,700&display=swap" rel="stylesheet">
         <link href="https://api.fontshare.com/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" >  
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" >
+        <link rel="stylesheet" href="./CSS/Home/home.css">
         <link rel="stylesheet" href="./CSS/base.css">
-        <link rel="stylesheet" href="./CSS/menu.css">
         <link rel="stylesheet" href="./CSS/reset.css" >
         <link rel="stylesheet" href="./CSS/normalize.css">
         <title>Home | Hector</title>
-        <link rel="shortcut icon" href="#" type="image/x-icon"/>
+        <link rel="shortcut icon" href="./Assets/Vetores/Logo/logo-hector.svg" type="image/x-icon"/>
     </head>
     
     <body id="body">
 
             <header class="cabecalho"  id="navbar">
 
+                <img src="./Assets/Vetores/Logo/logo-hector.svg" alt="Logo Hector" class="logo__hector">
+
+                <section class="secao__traducao___pagina">
+
+                    <a href="./index.html" class="link__traducao___pagina">PT</a>
+
+                    <a href="./index.html" class="link__traducao___pagina link__traducao___inativo">EN</a>
+
+                </section>
+
             </header>
 
             <main class="conteudo" id="conteudo"> 
-               
+            
+                <section class="navegacao__componentes">
+
+                    <ul class="lista__navegacao___componentes">
+
+                        <li class="item__lista___navegacao" id="lista__visao-geral">
+
+                            <button class="titulo__item___lista-abre titulo__item___lista-abre-visao-geral" onclick="abreVisaoGeral()">
+
+                                Visão geral 
+                                <svg class="vetor-navegacao" id="vetor-abre-visao-geral" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="vetor-navegacao" d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </button>
+
+                            <button class="titulo__item___lista-fecha titulo__item___lista-fecha-visao-geral" onclick="fechaVisaoGeral()">
+
+                                Visão geral 
+                                <svg class="vetor-navegacao" id="vetor-fecha-visao-geral" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="vetor-navegacao" d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </button>
+
+                            <section class="secao__conteudo___lista">
+                                  
+                                <button class="item__conteudo___lista tablinks" id="defaultOpen" onclick="openTab(event, 'introducao')">Introdução</button>
+
+                                <button class="item__conteudo___lista tablinks" onclick="openTab(event, 'comecando')">Começando</button>
+
+                            </section>
+
+                        </li>
+
+                        <li class="item__lista___navegacao" id="lista__projeto">
+
+                            <button class="titulo__item___lista-abre titulo__item___lista-abre-projeto" onclick="abreProjeto()">
+
+                                Projeto 
+                                <svg class="vetor-navegacao" id="vetor-abre-projeto" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="vetor-navegacao" d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </button>
+
+                            <button class="titulo__item___lista-fecha titulo__item___lista-fecha-projeto" onclick="fechaProjeto()">
+
+                                Projeto 
+                                <svg class="vetor-navegacao" id="vetor-fecha-projeto" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="vetor-navegacao" d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </button>
+
+                            <section class="secao__conteudo___lista">
+                                  
+                                <button class="item__conteudo___lista tablinks" onclick="openTab(event, 'colorimetria')">Colorimetria</button>
+
+                                <button class="item__conteudo___lista tablinks" onclick="openTab(event, 'tipografia')">Tipografia</button>
+
+                                <button class="item__conteudo___lista tablinks" onclick="openTab(event, 'animacao')">Animação</button>
+
+                                <button class="item__conteudo___lista tablinks" onclick="openTab(event, 'raio-borda')">Raio da borda</button>
+
+                                <button class="item__conteudo___lista tablinks" onclick="openTab(event, 'layout')">Layout</button>
+
+                                <button class="item__conteudo___lista tablinks" onclick="openTab(event, 'icones')">Ícones</button>
+
+                            </section>
+
+                        </li>
+
+                        <li class="item__lista___navegacao" id="lista__componentes">
+
+                            <button class="titulo__item___lista-abre titulo__item___lista-abre-componentes" onclick="abreComponentes()">
+
+                                Componentes 
+                                <svg class="vetor-navegacao" id="vetor-abre-componentes" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="vetor-navegacao" d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </button>
+
+                            <button class="titulo__item___lista-fecha titulo__item___lista-fecha-componentes" onclick="fechaComponentes()">
+
+                                Componentes 
+                                <svg class="vetor-navegacao" id="vetor-fecha-componentes" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="vetor-navegacao" d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </button>
+
+                            <section class="secao__conteudo___lista">
+                                  
+                                <button class="item__conteudo___lista tablinks" onclick="openTab(event, 'avatar')">Avatar</button>
+
+                                <button class="item__conteudo___lista tablinks" onclick="openTab(event, 'alertas')">Alertas</button>
+
+                                <button class="item__conteudo___lista tablinks" onclick="openTab(event, 'botoes')">Botões</button>
+
+                                <button class="item__conteudo___lista tablinks" onclick="openTab(event, 'formularios')">Formulários</button>
+
+                                <button class="item__conteudo___lista tablinks" onclick="openTab(event, 'link')">Link</button>
+
+                                <button class="item__conteudo___lista tablinks" onclick="openTab(event, 'listas')">Listas</button>
+
+                            </section>
+
+                        </li>
+
+                        <li class="item__lista___navegacao" id="lista__utilitario">
+
+                            <button class="titulo__item___lista-abre titulo__item___lista-abre-utilitario" onclick="abreUtilitario()">
+
+                                Utilitario 
+                                <svg class="vetor-navegacao" id="vetor-abre-utilitario" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="vetor-navegacao" d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </button>
+
+                            <button class="titulo__item___lista-fecha titulo__item___lista-fecha-utilitario" onclick="fechaUtilitario()">
+
+                                Utilitario 
+                                <svg class="vetor-navegacao" id="vetor-fecha-utilitario" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="vetor-navegacao" d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </button>
+
+                            <section class="secao__conteudo___lista">
+                                  
+                                <button class="item__conteudo___lista tablinks" onclick="openTab(event, 'utilitario-1')">Utilitário</button>
+
+                                <button class="item__conteudo___lista tablinks" onclick="openTab(event, 'utilitario-2')">Utilitário</button>
+
+                            </section>
+
+                        </li>
+
+                    </ul>
+
+                </section>
+
+                <section class="secao__introducao tabcontent" id="introducao">
+
+                    <section class="secao__info___introducao">
+
+                        <h2 class="titulo__info___introducao">Introdução</h2>
+
+                        <p class="descricao__info___introducao">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                    </section>
+
+                    <section class="secao__info___faq">
+
+                        <h3 class="titulo__info___faq">FAQ</h2>
+
+                        <p class="descricao__info___faq">Tudo o que você precisa saber sobre o produto e as perguntas frequentes estão aqui. Não consegue encontrar a resposta que procura? <a class="fale-conosco">Por favor, converse com nossa equipe.</a></p>
+
+                    </section>
+
+                    <section class="secao__faq">
+
+                        <button class="botao__faq" id="container__faq-1">
+
+                            <span class="pergunta__faq" id="pergunta__faq-1" onclick="abreFaq1()">
+
+                                Pergunta 1 ? 
+                                <svg class="vetor-faq" id="vetor-faq-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </span> 
+
+                            <span class="pergunta__faq" id="pergunta__faq-1-desativa" onclick="fechaFaq1()">
+
+                                Pergunta 1 ? 
+                                <svg class="vetor-faq" id="vetor-faq-desativa-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </span> 
+
+                            <span class="resposta__faq" id="resposta__faq-1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</span>
+
+                        </button>
+
+                        <button class="botao__faq" id="container__faq-2">
+
+                            <span class="pergunta__faq" id="pergunta__faq-2" onclick="abreFaq2()">
+                                
+                                Pergunta 2 ? 
+                                <svg class="vetor-faq" id="vetor-faq-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </span>
+
+                            <span class="pergunta__faq" id="pergunta__faq-2-desativa" onclick="fechaFaq2()">
+
+                                Pergunta 2 ? 
+                                <svg class="vetor-faq" id="vetor-faq-desativa-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </span>
+
+                            <span class="resposta__faq" id="resposta__faq-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</span>
+
+                        </button>
+
+                        <button class="botao__faq" id="container__faq-3">
+
+                            <span class="pergunta__faq" id="pergunta__faq-3" onclick="abreFaq3()">
+                                
+                                Pergunta 3 ? 
+                                <svg class="vetor-faq" id="vetor-faq-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>  
+
+                            </span>
+
+                            <span class="pergunta__faq" id="pergunta__faq-3-desativa" onclick="fechaFaq3()">
+
+                                Pergunta 3 ? 
+                                <svg class="vetor-faq" id="vetor-faq-desativa-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>  
+
+                            </span>
+
+                            <span class="resposta__faq" id="resposta__faq-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</span>
+
+                        </button>
+
+                        <button class="botao__faq" id="container__faq-4">
+
+                            <span class="pergunta__faq" id="pergunta__faq-4" onclick="abreFaq4()">
+                                
+                                Pergunta 4 ? 
+                                <svg class="vetor-faq" id="vetor-faq-4" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </span>
+
+                            <span class="pergunta__faq" id="pergunta__faq-4-desativa" onclick="fechaFaq4()">
+
+                                Pergunta 4 ? 
+                                <svg class="vetor-faq" id="vetor-faq-desativa-4" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </span>
+
+                            <span class="resposta__faq" id="resposta__faq-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</span>
+
+                        </button>
+
+                    </section>
+
+                </section>
+
+                <section class="secao__introducao tabcontent" id="comecando">
+
+                    <section class="secao__info___introducao">
+
+                        <h2 class="titulo__info___introducao">Introdução</h2>
+
+                        <p class="descricao__info___introducao">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                    </section>
+
+                    <section class="secao__info___faq">
+
+                        <h3 class="titulo__info___faq">FAQ</h2>
+
+                        <p class="descricao__info___faq">Tudo o que você precisa saber sobre o produto e as perguntas frequentes estão aqui. Não consegue encontrar a resposta que procura? <a class="fale-conosco">Por favor, converse com nossa equipe.</a></p>
+
+                    </section>
+
+                    <section class="secao__faq">
+
+                        <button class="botao__faq">
+
+                            <span class="pergunta__faq">
+
+                                Pergunta 1 ? 
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </span> 
+
+                            <span class="resposta__faq">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</span>
+
+                        </button>
+
+                        <button class="botao__faq">
+
+                            <span class="pergunta__faq">
+                                
+                                Pergunta 2 ? 
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </span>
+
+                            <span class="resposta__faq">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</span>
+
+                        </button>
+
+                        <button class="botao__faq">
+
+                            <span class="pergunta__faq">
+                                
+                                Pergunta 3 ? 
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </span>
+
+                            <span class="resposta__faq">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</span>
+
+                        </button>
+
+                        <button class="botao__faq">
+
+                            <span class="pergunta__faq">
+                                
+                                Pergunta 4 ? 
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+
+                            </span>
+
+                            <span class="resposta__faq">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</span>
+
+                        </button>
+
+                    </section>
+
+                </section>
+
+                <section class="secao__tipografia tabcontent" id="tipografia">
+
+                    <section class="secao__tabs___tipografia">
+
+                        <h3 class="titulo__tabs___tipografia">Tipografia</h3>
+
+                        <div class="container__tabs___tipografia">
+
+                            <button class="botao__tab tablinks-tipografia" id="defaultOpen-tipografia" onclick="openTabTipografia(event, 'tipos-letra')">Tipos de letra</button>
+
+                            <button class="botao__tab tablinks-tipografia" onclick="openTabTipografia(event, 'tamanho-fonte')">Tamanhos de fonte</button>
+
+                            <button class="botao__tab tablinks-tipografia" onclick="openTabTipografia(event, 'espessura-fonte')">Espessura da fonte</button>
+
+                            <button class="botao__tab tablinks-tipografia" onclick="openTabTipografia(event, 'transformacao')">Transformação</button>
+
+                        </div>
+
+                    </section>
+
+                    <section class="secao__tipos___letra tabcontent-tipografia" id="tipos-letra">
+
+                        <div class="container__cabecalho___tipos-letra">
+
+                            <h4 class="titulo__cabecalho___tipos-letra">Inter</h4>
+
+                            <a href="./Assets/Vetores/Logo/logo-hector.svg" download="Tipografia Font Inter">
+
+                                <svg class="vetor__download" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="vetor__download" d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="vetor__download" d="M7 10L12 15L17 10" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="vetor__download" d="M12 15V3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+
+                            </a>
+
+                        </div>
+
+                        <p class="descricao__tipos___letras">Inter é uma fonte gratuita e open source, de uma família tipográfica cuidadosamente trabalhada e projetada para telas de computador.</p>
+
+                        <section class="secao__exemplo___font-inter">
+
+                            <span class="exemplo__font-inter___uppercase">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</span>
+
+                            <span class="exemplo__font-inter___lowcase">a b c d e f g h i j k l m n o p q r s t u v w x y z</span>
+
+                            <span class="exemplo__font-inter___number">0 1 2 3 4 5 6 7 8 9</span>
+
+                        </section>
+
+                        <section class="secao__codigo">
+
+                            <input class="input__text___codigo" type="text" name="texto" id="texto" placeholder="Digite alguma coisa" value="<p class=fontFamily-Inter>...</p>" readonly/>
+
+                            <span class="texto__codigo">
+
+                                <img src="./Assets/Vetores/Tipografia/p-font-family.svg" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                <button class="botao__copia___codigo" onclick="copyToClipBoard()">
+
+                                    <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                        
+                                </button>
+
+                            </span>
+                        </section>
+
+                    </section>
+
+                </section>
+
+                <section class="secao__colorimetria tabcontent" id="colorimetria">
+
+                    <section class="secao__tabs___colorimetria">
+
+                        <h4 class="titulo__tabs___colorimetria">Colorimetria</h4>
+
+                        <div class="container__tabs___colorimetria">
+
+                            <button class="botao__tab tablinks-colorimetria" id="defaultOpen-colorimetria" onclick="openTabColorimetria(event, 'cores-marca')">Cores da marca</button>
+
+                            <button class="botao__tab tablinks-colorimetria" onclick="openTabColorimetria(event, 'cores-cinza')">Cores cinza</button>
+
+                            <button class="botao__tab tablinks-colorimetria" onclick="openTabColorimetria(event, 'cores-interface')">Cores da interface do usuário</button>
+
+                        </div>
+
+                    </section>
+
+                    <section class="secao__cores tabcontent-colorimetria" id="cores-marca">
+
+                        <p class="descricao__secao___cores">As cores primárias são usadas para elementos que devem refletir a marca. Cada cor tem um tom mais escuro e um mais claro.</p>
+
+                        <ul class="lista__secao__cores">
+
+                            <section class="secao__cores-aba">
+                                <li class="item__lista___secao-cores" id="hex__azul-claro">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__azul-claro">
+
+                                        <span class="cor__item___lista-secao-cores">Azul claro</span>
+                                        <input type="text" id="hex__azul-claro" class="cor__hex___item-lista" value="#85A7FF" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___azul-claro" for="hex__azul-claro">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+
+                                <li class="item__lista___secao-cores" id="hex__azul">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__azul">
+
+                                        <span class="cor__item___lista-secao-cores">Azul</span>
+                                        <input type="text" id="hex__azul" class="cor__hex___item-lista" value="#2C60E5" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___azul" for="hex__azul">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+
+                                <li class="item__lista___secao-cores" id="hex__azul-escuro">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__azul-escuro">
+
+                                        <span class="cor__item___lista-secao-cores">Azul escuro</span>
+                                        <input type="text" id="hex__azul-escuro" class="cor__hex___item-lista" value="#002FA8" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___azul-escuro" for="hex__azul-escuro">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+                            </section>
+
+                            <section class="secao__cores-aba">
+                                <li class="item__lista___secao-cores" id="hex__roxo-claro">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__roxo-claro">
+
+                                        <span class="cor__item___lista-secao-cores">Roxo claro</span>
+                                        <input type="text" id="hex__roxo-claro" class="cor__hex___item-lista" value="#ECA0FF" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___roxo-claro" for="hex__roxo-claro">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+
+                                <li class="item__lista___secao-cores" id="hex__roxo">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__roxo">
+
+                                        <span class="cor__item___lista-secao-cores">Roxo</span>
+                                        <input type="text" id="hex__roxo" class="cor__hex___item-lista" value="#B724DC" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___roxo" for="hex__roxo">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+
+                                <li class="item__lista___secao-cores" id="hex__roxo-escuro">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__roxo-escuro">
+
+                                        <span class="cor__item___lista-secao-cores">Roxo escuro</span>
+                                        <input type="text" id="hex__roxo-escuro" class="cor__hex___item-lista" value="#690084" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___roxo-escuro" for="hex__roxo-escuro">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+                            </section>
+
+                            <section class="secao__cores-aba">
+                                <li class="item__lista___secao-cores" id="hex__verde-claro">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__verde-claro">
+
+                                        <span class="cor__item___lista-secao-cores">Verde claro</span>
+                                        <input type="text" id="hex__verde-claro" class="cor__hex___item-lista" value="#8AD088" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___verde-claro" for="hex__verde-claro">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+
+                                <li class="item__lista___secao-cores" id="hex__verde">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__verde">
+
+                                        <span class="cor__item___lista-secao-cores">Verde</span>
+                                        <input type="text" id="hex__verde" class="cor__hex___item-lista" value="#339331" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___verde" for="hex__verde">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+
+                                <li class="item__lista___secao-cores" id="hex__verde-escuro">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__verde-escuro">
+
+                                        <span class="cor__item___lista-secao-cores">Verde escuro</span>
+                                        <input type="text" id="hex__verde-escuro" class="cor__hex___item-lista" value="#025900" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___verde-escuro" for="hex__verde-escuro">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+                            </section>
+
+                            <section class="secao__cores-aba">
+                                <li class="item__lista___secao-cores" id="hex__laranja-claro">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__laranja-claro">
+
+                                        <span class="cor__item___lista-secao-cores">Laranja claro</span>
+                                        <input type="text" id="hex__laranja-claro" class="cor__hex___item-lista" value="#FFC771" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___laranja-claro" for="hex__laranja-claro">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+
+                                <li class="item__lista___secao-cores" id="hex__laranja">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__laranja">
+
+                                        <span class="cor__item___lista-secao-cores">Laranja</span>
+                                        <input type="text" id="hex__laranja" class="cor__hex___item-lista" value="#FFAE34" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___laranja" for="hex__laranja">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+
+                                <li class="item__lista___secao-cores" id="hex__laranja-escuro">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__laranja-escuro">
+
+                                        <span class="cor__item___lista-secao-cores">Laranja escuro</span>
+                                        <input type="text" id="hex__laranja-escuro" class="cor__hex___item-lista" value="#FF9A00" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___laranja-escuro" for="hex__laranja-escuro">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+                            </section>
+
+                        </ul>
+
+                    </section>
+
+                </section>
+
             </main>
+
+            <script src="./Componentes/tab.js" type="text/javascript"></script>
+            <script src="./Componentes/ComponentesNavegacao/navegacao.js" type="text/javascript"></script>
+            <script src="./Componentes/Introducao/sumaryFAQ.js" type="text/javascript"></script>
+            <script src="./Componentes/Tipografia/tabTipografia.js" type="text/javascript"></script>
+            <script src="./Componentes/Tipografia/copiaCódigo.js" type="text/javascript"></script>
+            <script src="./Componentes/Colorimetria/tabColorimetria.js" type="text/javascript"></script>
 
     </body>
 
