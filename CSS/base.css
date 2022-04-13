@@ -19,7 +19,7 @@
     --low-medium: #666666;
     --low-dark: #292A2C;
 
-    --high-pure: #FDFEFF;;
+    --high-pure: #FDFEFF;
     --high-low: #E3E5E6;
     --high-medium: #DBDDDE;
     --high-dark: #BBBBBB;
@@ -54,4 +54,16 @@ body{
 html{
     scroll-behavior: smooth;
     overflow-x: hidden;
+}
+
+textarea{
+    resize: none;
+    user-select: none;
+}
+textarea::selection{
+    background-color: transparent;
+}
+
+.tabcontent{
+    animation: animaSecoes .3s ease-in-out forwards;
 }

@@ -1,0 +1,433 @@
+@media (max-width:1023px){
+    /*-------------------------CABECALHO------------------------*/
+    .cabecalho{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+
+        position: fixed;
+
+        width: 100vw;
+
+        background-color: #FFFFFF;
+
+        z-index: 300;
+
+        box-shadow: 0px 1px 10px rgba(26, 26, 26, 0.05);
+    }
+    .secao__botoes___menu{
+        display: flex;
+
+    }
+    .secao__traducao___pagina-desktop{
+        display: none;
+    }
+    .botao__abre___menu{
+        background-color: transparent;
+        border: none;
+
+        animation: animaBotoesMenu .3s ease-in-out forwards;
+    }
+    .botao__fecha___menu{
+        background-color: transparent;
+        border: none;
+
+        display: none;
+
+        animation: animaBotoesMenu .3s ease-in-out forwards;
+    }
+    @keyframes animaBotoesMenu {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    /*-------------------------NAVEGACAO-----------------------*/
+    .secao__traducao___navegacao-mobile{
+        display: block;
+        margin-bottom: 3.125rem;
+    }
+    .navegacao__componentes{
+        display: none;
+
+        width: 100vw;
+
+        height: 85.78vh;
+
+        position: fixed;
+
+        background-color: #FFFFFF;
+
+        top: 7.25rem;
+
+        z-index: 200;
+
+        overflow-y: scroll;
+
+        overscroll-behavior: contain;
+
+        animation: animaMenu .4s ease-in-out forwards;
+    }
+    @keyframes animaMenu {
+        0%{
+            top: 0rem;
+            opacity: 0;
+        }
+        100%{
+            top: 7.25rem;
+            opacity: 1;
+        }
+    }
+    .lista__navegacao___componentes{
+        width: 82vw;
+    }
+    .item__lista___navegacao{
+        width: 82vw;
+    }
+    .titulo__item___lista-abre{
+        width: 82vw;
+    }
+    .titulo__item___lista-fecha{
+        width: 82vw;
+    }
+    /*-------------------------INTRODUÇÃO-----------------------*/
+    .secao__introducao{
+        width: 100vw;
+
+        padding-left: 0rem;
+        padding-right: 0rem;
+        padding-top: 9.75rem;
+
+        align-items: center;
+    }
+    .secao__info___introducao{
+        width: 88vw;
+        gap: 2rem;
+    }
+    .titulo__info___introducao{
+        font-size: 24px;
+    }
+    .descricao__info___introducao{
+        font-size: 14px;
+    }
+    .secao__info___faq{
+        width: 88vw;
+        gap: 2rem;
+    }
+    .titulo__info___faq{
+        font-size: 24px;
+    }
+    .descricao__info___faq{
+        font-size: 14px;
+    }
+    .secao__faq{
+        width: 88vw;
+    }
+    .pergunta__faq{
+        width: 82vw;
+    }
+    .resposta__faq{
+        height: 10.75rem;
+    }
+    /*-------------------------TIPOGRAFIA-----------------------*/
+    .secao__tipografia{
+        padding-left: 0rem;
+        padding-right: 0rem;
+        padding-top: 9.75rem;
+        padding-bottom: 8.25rem;
+        align-items: center;
+
+        width: 100vw;
+    }
+    .titulo__tabs___tipografia{
+        font-size: 24px;
+    }
+    .container__tabs___tipografia{
+        width: 88vw;
+
+        gap: 1.125rem;
+    }
+    .botao__tab{
+        font-size: 14px;
+    }
+    .texto-tab{
+        display: none;
+    }
+    .secao__tipos___letra{
+        width: 88vw;
+    }
+    .container__cabecalho___tipos-letra{
+        width: 88vw;
+
+        margin-bottom: 2rem;
+    }
+    .titulo__cabecalho___tipos-letra{
+        font-size: 18px;
+    }
+    .descricao__tipos___letras{
+        width: 88vw;
+
+        font-size: 14px;
+    }
+    .secao__exemplo___font-inter{
+        width: 88vw;
+
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+    .exemplo__font-inter___uppercase{
+        font-size: 14px;
+    }
+    .exemplo__font-inter___lowcase{
+        font-size: 14px;
+    }
+    .exemplo__font-inter___number{
+        font-size: 14px;
+    }
+    .secao__codigo{
+        width: 88vw;
+
+        padding-top: 3.313rem;
+
+        
+    }
+    .texto__codigo{
+        width: 81.2vw;
+    }
+    .botao__copia___codigo{
+        top: -2.5rem;
+    }
+    /*-------------------------COLORIMETRIA-----------------------*/
+    .secao__colorimetria{
+        padding-left: 0rem;
+        padding-right: 0rem;
+        padding-top: 9.75rem;
+        padding-bottom: 8.25rem;
+        align-items: center;
+
+        width: 100vw;
+    }
+    .titulo__tabs___colorimetria{
+        font-size: 24px;
+    }
+    .container__tabs___colorimetria{
+        width: 88vw;
+
+        gap: 1.125rem;
+    }
+    .botao__tab{
+        font-size: 14px;
+    }
+    .texto-tab{
+        display: none;
+    }
+    .texto-tab-ativo{
+        display: block;
+    }
+    .secao__cores{
+        width: 88vw;
+    }
+    .secao__cores-aba{
+        width: 88vw;
+        overflow-x: hidden;
+    }
+    .descricao__secao___cores{
+        width: 88vw;
+        font-size: 14px;
+    }
+    .lista__secao__cores{
+        width: 88vw;
+        
+    }
+    #lista__secao___cores-marcas{
+        height: 25rem;
+    }
+    #lista__secao___cores-cinza{
+        height: 21rem;
+    }
+    .item__lista___secao-cores {
+        width: 29.3vw;
+        overflow-y: hidden;
+    }
+    .container__item___lista-secao-cores{
+        width: 29.3vw;
+    }
+    .item__lista___secao-cores > label{
+        width: 29.3vw;
+        height: 7rem;
+        font-size: 14px;
+
+        padding-left: .5rem;
+        padding-bottom: 1.5rem;
+        padding-top: 1.8rem;
+    }
+    .cor__item___lista-secao-cores{
+        font-size: 14px;
+    }
+    .cor__hex___item-lista{
+        font-size: 14px;
+    }
+    #lista__secao___cores-aba-cinza{
+        flex-wrap: wrap;
+
+        width: 86vw;
+        justify-content: center;
+    }
+    #lista__secao___cores-aba-cinza > li{
+        width: 43vw;
+    }
+    #hex__low-pure{
+        border-radius: 4px 0px 0px 0px;
+    }
+    #hex__low-dark{
+        border-radius: 0px 4px 0px 0px;
+    }
+    #hex__low-light{
+        border-radius: 0px 0px 4px 0px;
+    }
+    #hex__low-medium{
+        border-radius: 0px 0px 0px 4px;
+    }
+    #hex__high-pure{
+        border-radius: 0px 0px 4px 0px;
+        border: none;
+    }
+    #label__hex___high-pure{
+        border: none;
+    }
+    #hex__high-dark{
+        border-radius: 4px 0px 0px 0px;
+    }
+    #hex__high-light{
+        border-radius: 0px 0px 0px 4px;
+    }
+    #hex__high-medium{
+        border-radius: 0px 4px 0px 0px;
+    }
+    /*--------------------------BOTOES-------------------------*/
+    .secao__botoes{
+        padding-left: 0rem;
+        padding-right: 0rem;
+        padding-top: 9.75rem;
+        padding-bottom: 8.25rem;
+        align-items: center;
+
+        width: 100vw;
+    }
+    .titulo__tabs___botoes{
+        font-size: 24px;
+    }
+    .container__tabs___botoes{
+        width: 88vw;
+
+        gap: 1.125rem;
+    }
+    .botao__tab{
+        font-size: 14px;
+    }
+    .texto-tab{
+        display: none;
+    }
+    .texto-tab-ativo{
+        display: block;
+    }
+    .secao__componentes___botoes{
+        width: 88vw;
+    }
+    .titulo__info___botao-componentes{
+        font-size: 24px;
+    }
+    .descricao__info___botao-componentes{
+        font-size: 14px;
+
+        width: 88vw;
+    }
+    .secao__visual___botao{
+        width: 88vw;
+
+        justify-content: center;
+    }
+    .secao__info___botao-componentes > h4{
+        font-size: 18px;
+    }
+    .classe__visual-16{
+        font-size: 14px;
+    }
+    #tamanhos-botoes-desktop{
+        display: none;
+    }
+    #tamanhos-botoes-mobile{
+        display: flex;
+    }
+    .secao__visual___botao-space-between{
+        padding-right: 0rem;
+    }
+    .button__primary-hover{
+        background-color: #9594AC;
+        border: 2px solid #9594AC;
+    }
+    .button__secundary-hover{
+        background: #E6E5FA;
+    }
+    .imagem__codigo{
+        width: 100%;
+    }
+    /*-------------------------FORMULARIOS-----------------------*/
+    .secao__formularios{
+        padding-left: 0rem;
+        padding-right: 0rem;
+        padding-top: 9.75rem;
+        padding-bottom: 8.25rem;
+        align-items: center;
+
+        width: 100vw;
+    }
+    .titulo__tabs___formulario{
+        font-size: 24px;
+    }
+    .container__tabs___formulario{
+        width: 88vw;
+
+        gap: 1.125rem;
+    }
+    .botao__tab{
+        font-size: 14px;
+    }
+    .texto-tab{
+        display: none;
+    }
+    .texto-tab-ativo{
+        display: block;
+    }
+    .secao__componentes___formularios{
+        width: 88vw;
+    }
+    .titulo__info___formularios-componentes{
+        font-size: 18px;
+    }
+    .descricao__info___formularios-componentes{
+        width: 88vw;
+    }
+    .secao__visual___formularios-space-between{
+        width: 88vw;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+    .input__formularios--xl{
+        width: 72vw;
+    }
+    .input__formularios--l{
+        width: 72vw;
+    }
+    .input__formularios--m{
+        width: 72vw;
+    }
+    .container__info___visual-textarea{
+        height: 12.2rem;
+    }
+}

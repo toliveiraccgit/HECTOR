@@ -42,7 +42,7 @@ const vetorDesativaFaq4 = document.querySelector('#vetor-faq-desativa-4')
 const respostaFaq4 = document.querySelector('#resposta__faq-4')
 const containerFaq4 = document.querySelector('#container__faq-4')
 
-
+const tamanhoTela = screen.width
 
 function abreFaq1(){
     containerFaq1.style.height = ` 6.563rem `
@@ -53,6 +53,12 @@ function abreFaq1(){
 
     vetorFaq1.style.animation = ` voltaVetor.3s ease-in-out forwards `
     vetorDesativaFaq1.style.animation = ` rotacionaVetor .3s ease-in-out forwards `
+
+    
+    
+    if (tamanhoTela <= 1023) {
+        containerFaq1.style.height = ` 15.875rem `
+    }
 }
 
 function fechaFaq1(){
@@ -78,6 +84,10 @@ function abreFaq2(){
 
     vetorFaq2.style.animation = ` voltaVetor.3s ease-in-out forwards `
     vetorDesativaFaq2.style.animation = ` rotacionaVetor .3s ease-in-out forwards `
+
+    if (tamanhoTela <= 1023) {
+        containerFaq2.style.height = ` 15.875rem `
+    }
 }
 
 function fechaFaq2(){
@@ -104,6 +114,10 @@ function abreFaq3(){
 
     vetorFaq3.style.animation = ` voltaVetor.3s ease-in-out forwards `
     vetorDesativaFaq3.style.animation = ` rotacionaVetor .3s ease-in-out forwards `
+
+    if (tamanhoTela <= 1023) {
+        containerFaq3.style.height = ` 15.875rem `
+    }
 }
 function fechaFaq3(){
     containerFaq3.style.height = ` 2.875rem `
@@ -129,6 +143,10 @@ function abreFaq4(){
 
     vetorFaq4.style.animation = ` voltaVetor.3s ease-in-out forwards `
     vetorDesativaFaq4.style.animation = ` rotacionaVetor .3s ease-in-out forwards `
+
+    if (tamanhoTela <= 1023) {
+        containerFaq4.style.height = ` 15.875rem `
+    }
 }
 function fechaFaq4(){
     containerFaq4.style.height = ` 2.875rem `

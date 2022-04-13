@@ -22,6 +22,7 @@
         <link href="https://api.fontshare.com/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" >
         <link rel="stylesheet" href="./CSS/Home/home.css">
+        <link rel="stylesheet" href="./CSS/Home/homeResponsivo.css">
         <link rel="stylesheet" href="./CSS/base.css">
         <link rel="stylesheet" href="./CSS/reset.css" >
         <link rel="stylesheet" href="./CSS/normalize.css">
@@ -35,7 +36,7 @@
 
                 <img src="./Assets/Vetores/Logo/logo-hector.svg" alt="Logo Hector" class="logo__hector">
 
-                <section class="secao__traducao___pagina">
+                <section class="secao__traducao___pagina secao__traducao___pagina-desktop">
 
                     <a href="./index.html" class="link__traducao___pagina">PT</a>
 
@@ -43,11 +44,47 @@
 
                 </section>
 
+                <section class="secao__botoes___menu">
+
+                    <button class="botao__abre___menu" onclick="abreMenu()">
+
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="vetor-menu-1" d="M21 12H7" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path class="vetor-menu-2" d="M21 18L3 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path class="vetor-menu-3" d="M21 6H3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            
+
+                    </button>
+
+                    <button class="botao__fecha___menu" onclick="fechaMenu()">
+
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.6799 6L6.67993 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.67993 6L18.6799 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>   
+
+                    </button>
+
+                </section>
+                
             </header>
 
             <main class="conteudo" id="conteudo"> 
             
                 <section class="navegacao__componentes">
+
+                    <section class="secao__traducao___navegacao-mobile">
+
+                        <section class="secao__traducao___pagina secao__traducao___pagina-mobile">
+
+                            <a href="./index.html" class="link__traducao___pagina">PT</a>
+        
+                            <a href="./index.html" class="link__traducao___pagina link__traducao___inativo">EN</a>
+        
+                        </section>
+
+                    </section>
 
                     <ul class="lista__navegacao___componentes">
 
@@ -403,11 +440,11 @@
 
                         <div class="container__tabs___tipografia">
 
-                            <button class="botao__tab tablinks-tipografia" id="defaultOpen-tipografia" onclick="openTabTipografia(event, 'tipos-letra')">Tipos de letra</button>
+                            <button class="botao__tab tablinks-tipografia" id="defaultOpen-tipografia" onclick="openTabTipografia(event, 'tipos-letra')">Tipos <span class="texto-tab">de letra</span></button>
 
-                            <button class="botao__tab tablinks-tipografia" onclick="openTabTipografia(event, 'tamanho-fonte')">Tamanhos de fonte</button>
+                            <button class="botao__tab tablinks-tipografia" onclick="openTabTipografia(event, 'tamanho-fonte')">Tamanhos <span class="texto-tab">de fonte</span></button>
 
-                            <button class="botao__tab tablinks-tipografia" onclick="openTabTipografia(event, 'espessura-fonte')">Espessura da fonte</button>
+                            <button class="botao__tab tablinks-tipografia" onclick="openTabTipografia(event, 'espessura-fonte')">Espessura <span class="texto-tab">da fonte</span></button>
 
                             <button class="botao__tab tablinks-tipografia" onclick="openTabTipografia(event, 'transformacao')">Transformação</button>
 
@@ -447,7 +484,7 @@
 
                         <section class="secao__codigo">
 
-                            <textarea class="input__text___codigo" id="text-font-inter" placeholder="Digite alguma coisa" readonly><p class=fontFamily-Inter></p></textarea>
+                            <textarea class="input__text___codigo" id="text-font-inter" placeholder="Digite alguma coisa" readonly><p class="fontFamily-Inter"></p></textarea>
 
                             <span class="texto__codigo">
 
@@ -477,11 +514,11 @@
 
                         <div class="container__tabs___colorimetria">
 
-                            <button class="botao__tab tablinks-colorimetria" id="defaultOpen-colorimetria" onclick="openTabColorimetria(event, 'cores-marca')">Cores da marca</button>
+                            <button class="botao__tab tablinks-colorimetria" id="defaultOpen-colorimetria" onclick="openTabColorimetria(event, 'cores-marca')"><span class="texto-tab">Cores da marca</span><span class="texto-tab-ativo">Marca</span></button>
 
                             <button class="botao__tab tablinks-colorimetria" onclick="openTabColorimetria(event, 'cores-cinza')">Cores cinza</button>
 
-                            <button class="botao__tab tablinks-colorimetria" onclick="openTabColorimetria(event, 'cores-interface')">Cores da interface do usuário</button>
+                            <button class="botao__tab tablinks-colorimetria" onclick="openTabColorimetria(event, 'cores-interface')"><span class="texto-tab">Cores da interface do usuário</span><span class="texto-tab-ativo">Interface</span></button>
 
                         </div>
 
@@ -491,7 +528,7 @@
 
                         <p class="descricao__secao___cores">As cores primárias são usadas para elementos que devem refletir a marca. Cada cor tem um tom mais escuro e um mais claro.</p>
 
-                        <ul class="lista__secao__cores">
+                        <ul class="lista__secao__cores" id="lista__secao___cores-marcas">
 
                             <section class="secao__cores-aba">
                                 <li class="item__lista___secao-cores" id="hex__azul-claro">
@@ -503,7 +540,7 @@
 
                                     </div>
 
-                                    <label id="label__hex___azul-claro" for="hex__azul-claro">
+                                    <label class="btn" id="label__hex___azul-claro" for="hex__azul-claro" data-clipboard-text="#85A7FF">
 
                                         Copiar código hexadecimal
 
@@ -520,7 +557,8 @@
 
                                     </div>
 
-                                    <label id="label__hex___azul" for="hex__azul">
+                                    <label id="label__hex___azul" for="hex__azul" class="btn"
+                                    data-clipboard-text="#2C60E5">
 
                                         Copiar código hexadecimal
 
@@ -537,7 +575,8 @@
 
                                     </div>
 
-                                    <label id="label__hex___azul-escuro" for="hex__azul-escuro">
+                                    <label id="label__hex___azul-escuro" for="hex__azul-escuro" class="btn"
+                                    data-clipboard-text="#002FA8">
 
                                         Copiar código hexadecimal
 
@@ -556,7 +595,8 @@
 
                                     </div>
 
-                                    <label id="label__hex___roxo-claro" for="hex__roxo-claro">
+                                    <label id="label__hex___roxo-claro" for="hex__roxo-claro" class="btn"
+                                    data-clipboard-text="#ECA0FF">
 
                                         Copiar código hexadecimal
 
@@ -573,7 +613,8 @@
 
                                     </div>
 
-                                    <label id="label__hex___roxo" for="hex__roxo">
+                                    <label id="label__hex___roxo" for="hex__roxo" class="btn"
+                                    data-clipboard-text="#B724DC">
 
                                         Copiar código hexadecimal
 
@@ -590,7 +631,8 @@
 
                                     </div>
 
-                                    <label id="label__hex___roxo-escuro" for="hex__roxo-escuro">
+                                    <label id="label__hex___roxo-escuro" for="hex__roxo-escuro" class="btn"
+                                    data-clipboard-text="#690084">
 
                                         Copiar código hexadecimal
 
@@ -609,7 +651,8 @@
 
                                     </div>
 
-                                    <label id="label__hex___verde-claro" for="hex__verde-claro">
+                                    <label id="label__hex___verde-claro" for="hex__verde-claro" class="btn"
+                                    data-clipboard-text="#8AD088">
 
                                         Copiar código hexadecimal
 
@@ -626,7 +669,8 @@
 
                                     </div>
 
-                                    <label id="label__hex___verde" for="hex__verde">
+                                    <label id="label__hex___verde" for="hex__verde" class="btn"
+                                    data-clipboard-text="#339331">
 
                                         Copiar código hexadecimal
 
@@ -643,7 +687,8 @@
 
                                     </div>
 
-                                    <label id="label__hex___verde-escuro" for="hex__verde-escuro">
+                                    <label id="label__hex___verde-escuro" for="hex__verde-escuro" class="btn"
+                                    data-clipboard-text="#025900">
 
                                         Copiar código hexadecimal
 
@@ -662,7 +707,8 @@
 
                                     </div>
 
-                                    <label id="label__hex___laranja-claro" for="hex__laranja-claro">
+                                    <label id="label__hex___laranja-claro" for="hex__laranja-claro" class="btn"
+                                    data-clipboard-text="#FFC771">
 
                                         Copiar código hexadecimal
 
@@ -679,7 +725,8 @@
 
                                     </div>
 
-                                    <label id="label__hex___laranja" for="hex__laranja">
+                                    <label id="label__hex___laranja" for="hex__laranja" class="btn"
+                                    data-clipboard-text="#FFAE34">
 
                                         Copiar código hexadecimal
 
@@ -696,7 +743,8 @@
 
                                     </div>
 
-                                    <label id="label__hex___laranja-escuro" for="hex__laranja-escuro">
+                                    <label id="label__hex___laranja-escuro" for="hex__laranja-escuro" class="btn"
+                                    data-clipboard-text="#FF9A00">
 
                                         Copiar código hexadecimal
 
@@ -709,16 +757,1970 @@
 
                     </section>
 
+                    <section class="secao__cores tabcontent-colorimetria" id="cores-cinza">
+
+                        <p class="descricao__secao___cores">As cores cinza são usadas para texto, planos de fundo, linhas, ícones e bordas.</p>
+
+                        <ul class="lista__secao__cores" id="lista__secao___cores-cinza">
+
+                            <section class="secao__cores-aba" id="lista__secao___cores-aba-cinza">
+                                <li class="item__lista___secao-cores" id="hex__low-pure">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__low-pure">
+
+                                        <span class="cor__item___lista-secao-cores">Low Pure</span>
+                                        <input type="text" id="hex__low-pure" class="cor__hex___item-lista" value="#131416" readonly>
+
+                                    </div>
+
+                                    <label class="btn" id="label__hex___low-pure" for="hex__low-pure" data-clipboard-text="#131416">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+
+                                <li class="item__lista___secao-cores" id="hex__low-dark">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__low-dark">
+
+                                        <span class="cor__item___lista-secao-cores">Low Dark</span>
+                                        <input type="text" id="hex__low-dark" class="cor__hex___item-lista" value="#292A2C" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___low-dark" for="hex__low-dark" class="btn"
+                                    data-clipboard-text="#292A2C">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+
+                                <li class="item__lista___secao-cores" id="hex__low-medium">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__low-medium">
+
+                                        <span class="cor__item___lista-secao-cores">Low Medium</span>
+                                        <input type="text" id="hex__low-medium" class="cor__hex___item-lista" value="#666666" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___low-medium" for="hex__low-medium" class="btn"
+                                    data-clipboard-text="#666666">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+
+                                <li class="item__lista___secao-cores" id="hex__low-light">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__low-light">
+
+                                        <span class="cor__item___lista-secao-cores">Low Light</span>
+                                        <input type="text" id="hex__low-light" class="cor__hex___item-lista" value="#A3A3A3" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___low-light" for="hex__low-light" class="btn"
+                                    data-clipboard-text="#A3A3A3">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+                            </section>
+
+                            <section class="secao__cores-aba" id="lista__secao___cores-aba-cinza">
+                                <li class="item__lista___secao-cores" id="hex__high-dark">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__high-dark">
+
+                                        <span class="cor__item___lista-secao-cores" id="cor__item-high">High Dark</span>
+                                        <input type="text" id="hex__high-dark" class="cor__hex___item-lista" value="#BBBBBB" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___high-dark" for="hex__high-dark" class="btn"
+                                    data-clipboard-text="#BBBBBB">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+
+                                <li class="item__lista___secao-cores" id="hex__high-medium">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__high-medium">
+
+                                        <span class="cor__item___lista-secao-cores" id="cor__item-high">High Medium</span>
+                                        <input type="text" id="hex__high-medium" class="cor__hex___item-lista" value="#DBDDDE" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___high-medium" for="hex__high-medium" class="btn"
+                                    data-clipboard-text="#DBDDDE">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+
+                                <li class="item__lista___secao-cores" id="hex__high-light">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__high-light">
+
+                                        <span class="cor__item___lista-secao-cores" id="cor__item-high">High Light</span>
+                                        <input type="text" id="hex__high-light" class="cor__hex___item-lista" value="#E3E5E6" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___high-light" for="hex__high-light" class="btn"
+                                    data-clipboard-text="#E3E5E6">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+
+                                <li class="item__lista___secao-cores" id="hex__high-pure">
+
+                                    <div class="container__item___lista-secao-cores" id="hex__high-pure">
+
+                                        <span class="cor__item___lista-secao-cores" id="cor__item-high">High Pure</span>
+                                        <input type="text" id="cor__item-high" class="cor__hex___item-lista" value="#FDFEFF" readonly>
+
+                                    </div>
+
+                                    <label id="label__hex___high-pure" for="hex__high-pure" class="btn"
+                                    data-clipboard-text="#FDFEFF">
+
+                                        Copiar código hexadecimal
+
+                                    </label>
+
+                                </li>
+
+                            </section>
+
+                        </ul>
+
+                    </section>
+
+                    <section class="secao__alerta___copy">
+
+                        <h2 class="titulo__copy">Copiado!</h2>
+
+                    </section>
+
+                </section>
+
+                <section class="secao__botoes tabcontent" id="botoes">
+
+                    <section class="secao__tabs___botoes">
+
+                        <h4 class="titulo__tabs___botoes">Botões</h4>
+
+                        <div class="container__tabs___botoes">
+
+                            <button class="botao__tab tablinks-botoes" id="defaultOpen-botoes" onclick="openTabBotoes(event, 'hierarquia')">Hierarquia</button>
+
+                            <button class="botao__tab tablinks-botoes" onclick="openTabBotoes(event, 'tamanhos-botoes')">Tamanhos <span class="texto-tab">de botão</span></button>
+
+                            <button class="botao__tab tablinks-botoes" onclick="openTabBotoes(event, 'estados-botoes')">Estados</button>
+
+                        </div>
+
+                    </section>
+
+                    <section class="secao__componentes___botoes tabcontent-botoes" id="hierarquia">
+
+                        <section class="secao__botao___componentes">
+
+                            <section class="secao__info___botao-componentes">
+
+                                <h4 class="titulo__info___botao-componentes">Botão primário</h4>
+
+                                <p class="descricao__info___botao-componentes">O botão primário é aquele que será utilizado com maior frequência dentro da interface.</p>
+
+                            </section>
+
+                            <section class="secao__visual___botao">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__primary">Button</button>
+
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Primary</span>
+
+                                        <span class="classe__visual">.button__primary</span>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-primary-value" readonly><button class="button .button.primary"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoPrimary/botao-primary.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-primary-value">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                        </section>
+
+                        <section class="secao__botao___componentes">
+
+                            <section class="secao__info___botao-componentes">
+
+                                <h4 class="titulo__info___botao-componentes">Botão secundário</h4>
+
+                                <p class="descricao__info___botao-componentes">O botão secundário é utilizado quando queremos mostrar duas ações mas a primeira delas é a ação principal.</p>
+
+                            </section>
+
+                            <section class="secao__visual___botao">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__secundary">Button</button>
+
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Secundary</span>
+
+                                        <span class="classe__visual">.button__secundary</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-secundary-value" readonly><button class="button .button.secundary"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoSecundary/botao-secundary.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-secundary-value">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                        </section>
+                    </section>
+
+                    <section class="secao__componentes___botoes tabcontent-botoes" id="tamanhos-botoes">
+
+                        <section class="secao__botao___componentes" id="tamanhos-botoes-desktop">
+
+                            <section class="secao__info___botao-componentes">
+
+                                <h4 class="titulo__info___botao-componentes">Tamanho botão primário</h4>
+
+                                <p class="descricao__info___botao-componentes">O tamanho padrão de botão é <span class="classe__visual-16">.button--xs</span> <span class="classe__visual-16">.button--s</span> <span class="classe__visual-16">.button--m</span> <span class="classe__visual-16">.button--l</span> <span class="classe__visual-16">.button--xl</span> <span class="classe__visual-16">.button--m</span></p>
+
+                            </section>
+
+                            <section class="secao__visual___botao secao__visual___botao-space-between">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__primary button__primary--xl">Button</button>
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Extra Grande</span>
+
+                                        <span class="classe__visual">.button__primary--xl</span>
+                                    </div>
+                                </div>
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__primary button__primary--x">Button</button>
+                                    <div class="texto__info___visual-botao">
+                                        <span class="tipo__visual">Grande</span>
+
+                                        <span class="classe__visual">.button__primary--x</span>
+                                    </div>
+                                </div>
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__primary button__primary--m">Button</button>
+
+                                    <div class="texto__info___visual-botao">
+                                        <span class="tipo__visual">Médio</span>
+
+                                        <span class="classe__visual">.button__primary--m</span>
+                                    </div>
+                                </div>
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__primary button__primary--s">Button</button>
+                                    <div class="texto__info___visual-botao">
+                                        <span class="tipo__visual">Pequeno</span>
+
+                                        <span class="classe__visual">.button__primary--s</span>
+                                    </div>
+                                </div>
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__primary button__primary--xs">Button</button>
+                                    <div class="texto__info___visual-botao">
+                                        <span class="tipo__visual">Extra Pequeno</span>
+
+                                        <span class="classe__visual">.button__primary--xs</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-primary--xl" readonly><button class="button .button.primary--xl"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoPrimary/Tamanho/botao-primary-extra-grande.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-primary--xl">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-primary--x" readonly><button class="button .button.primary--x"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoPrimary/Tamanho/botao-primary-grande.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-primary--x">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-primary--m" readonly><button class="button .button.primary--m"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoPrimary/Tamanho/botao-primary-medium.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-primary--m">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-primary--s" readonly><button class="button .button.primary--s"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoPrimary/Tamanho/botao-primary-small.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-primary--s">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-primary--xs" readonly><button class="button .button.primary--xs"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoPrimary/Tamanho/botao-primary-extra-pequeno.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-primary--xs">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                        </section>
+
+                        <section class="secao__botao___componentes" id="tamanhos-botoes-mobile">
+
+                            <section class="secao__info___botao-componentes">
+
+                                <h4 class="titulo__info___botao-componentes">Tamanho botão primário</h4>
+
+                                <p class="descricao__info___botao-componentes">O tamanho padrão de botão é <span class="classe__visual-16">.button--xs</span> <span class="classe__visual-16">.button--s</span> <span class="classe__visual-16">.button--m</span> <span class="classe__visual-16">.button--l</span> <span class="classe__visual-16">.button--xl</span> <span class="classe__visual-16">.button--m</span></p>
+
+                            </section>
+
+                            <section class="secao__visual___botao">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__primary button__primary--xl">Button</button>
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Extra Grande</span>
+
+                                        <span class="classe__visual">.button__primary--xl</span>
+                                    </div>
+                                </div>
+
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-primary--xl" readonly><button class="button .button.primary--xl"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoPrimary/Tamanho/botao-primary-extra-grande.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-primary--xl">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__visual___botao">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__primary button__primary--x">Button</button>
+                                    <div class="texto__info___visual-botao">
+                                        <span class="tipo__visual">Grande</span>
+
+                                        <span class="classe__visual">.button__primary--x</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-primary--x" readonly><button class="button .button.primary--x"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoPrimary/Tamanho/botao-primary-grande.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-primary--x">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__visual___botao">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__primary button__primary--m">Button</button>
+
+                                    <div class="texto__info___visual-botao">
+                                        <span class="tipo__visual">Médio</span>
+
+                                        <span class="classe__visual">.button__primary--m</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-primary--m" readonly><button class="button .button.primary--m"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoPrimary/Tamanho/botao-primary-medium.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-primary--m">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__visual___botao">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__primary button__primary--s">Button</button>
+                                    <div class="texto__info___visual-botao">
+                                        <span class="tipo__visual">Pequeno</span>
+
+                                        <span class="classe__visual">.button__primary--s</span>
+                                    </div>
+                                </div>
+
+                            </section>
+  
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-primary--s" readonly><button class="button .button.primary--s"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoPrimary/Tamanho/botao-primary-small.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-primary--s">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__visual___botao">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__primary button__primary--xs">Button</button>
+                                    <div class="texto__info___visual-botao">
+                                        <span class="tipo__visual">Extra Pequeno</span>
+
+                                        <span class="classe__visual">.button__primary--xs</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-primary--xs" readonly><button class="button .button.primary--xs"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoPrimary/Tamanho/botao-primary-extra-pequeno.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-primary--xs">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+                            
+                        </section>
+
+                        <section class="secao__botao___componentes"  id="tamanhos-botoes-desktop">
+
+                            <section class="secao__info___botao-componentes">
+
+                                <h4 class="titulo__info___botao-componentes">Botão secundário</h4>
+
+                                <p class="descricao__info___botao-componentes">O botão secundário é utilizado quando queremos mostrar duas ações mas a primeira delas é a ação principal.</p>
+
+                            </section>
+
+                            <section class="secao__visual___botao secao__visual___botao-space-between">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__secundary button__secundary--xl">Button</button>
+
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Extra Grande</span>
+
+                                        <span class="classe__visual">.button__secundary--xl</span>
+                                    </div>
+                                </div>
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__secundary button__secundary--x">Button</button>
+
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Grande</span>
+
+                                        <span class="classe__visual">.button__secundary--x</span>
+                                    </div>
+                                </div>
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__secundary button__secundary--m">Button</button>
+
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Médio</span>
+
+                                        <span class="classe__visual">.button__secundary--m</span>
+                                    </div>
+                                </div>
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__secundary button__secundary--s">Button</button>
+
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Pequeno</span>
+
+                                        <span class="classe__visual">.button__secundary--s</span>
+                                    </div>
+                                </div>
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__secundary button__secundary--xs">Button</button>
+
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Extra Pequeno</span>
+
+                                        <span class="classe__visual">.button__secundary--xs</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-secundary--xl" readonly><button class="button .button.secundary--xl"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoSecundary/Tamanho/botao-secundary-extra-grande.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-secundary--xl">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-secundary--x" readonly><button class="button .button.secundary--x"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoSecundary/Tamanho/botao-secundary-grande.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-secundary--x">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-secundary--m" readonly><button class="button .button.secundary--m"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoSecundary/Tamanho/botao-secundary-medio.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-secundary--m">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-secundary--s" readonly><button class="button .button.secundary--s"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoSecundary/Tamanho/botao-secundary-pequeno.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-secundary--s">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-secundary--xs" readonly><button class="button .button.secundary--xs"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoSecundary/Tamanho/botao-secundary-extra-pequena.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-secundary--xs">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                        </section>
+
+                        <section class="secao__botao___componentes"  id="tamanhos-botoes-mobile">
+
+                            <section class="secao__info___botao-componentes">
+
+                                <h4 class="titulo__info___botao-componentes">Botão secundário</h4>
+
+                                <p class="descricao__info___botao-componentes">O botão secundário é utilizado quando queremos mostrar duas ações mas a primeira delas é a ação principal.</p>
+
+                            </section>
+
+                            <section class="secao__visual___botao">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__secundary button__secundary--xl">Button</button>
+
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Extra Grande</span>
+
+                                        <span class="classe__visual">.button__secundary--xl</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-secundary--xl" readonly><button class="button .button.secundary--xl"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoSecundary/Tamanho/botao-secundary-extra-grande.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-secundary--xl">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__visual___botao">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__secundary button__secundary--x">Button</button>
+
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Grande</span>
+
+                                        <span class="classe__visual">.button__secundary--x</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-secundary--x" readonly><button class="button .button.secundary--x"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoSecundary/Tamanho/botao-secundary-grande.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-secundary--x">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__visual___botao">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__secundary button__secundary--m">Button</button>
+
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Médio</span>
+
+                                        <span class="classe__visual">.button__secundary--m</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-secundary--m" readonly><button class="button .button.secundary--m"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoSecundary/Tamanho/botao-secundary-medio.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-secundary--m">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__visual___botao">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__secundary button__secundary--s">Button</button>
+
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Pequeno</span>
+
+                                        <span class="classe__visual">.button__secundary--s</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-secundary--s" readonly><button class="button .button.secundary--s"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoSecundary/Tamanho/botao-secundary-pequeno.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-secundary--s">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__visual___botao">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__secundary button__secundary--xs">Button</button>
+
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Extra Pequeno</span>
+
+                                        <span class="classe__visual">.button__secundary--xs</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-secundary--xs" readonly><button class="button .button.secundary--xs"></button></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoSecundary/Tamanho/botao-secundary-extra-pequena.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-secundary--xs">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                        </section>
+                    </section>
+
+                    <section class="secao__componentes___botoes tabcontent-botoes" id="estados-botoes">
+
+                        <section class="secao__botao___componentes">
+
+                            <section class="secao__info___botao-componentes">
+
+                                <h4 class="titulo__info___botao-componentes">Botão com ícone</h4>
+
+                                <p class="descricao__info___botao-componentes">Botões com ícones são agrupados em um componente pai <span class="classe__visual-16">.uiIcon</span> que deve ter o tamanho do botão aplicado com uma classe adicional.</p>
+
+                            </section>
+
+                            <section class="secao__visual___botao secao__visual___botao-space-between">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__primary button__primary-icone">
+
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#FDFEFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M7 10L12 15L17 10" stroke="#FDFEFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12 15V3" stroke="#FDFEFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        
+                                        Button
+                                    
+                                    </button>
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Ícone Primário</span>
+
+                                        <span class="classe__visual">.button__primary-icone</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-primary-icone" readonly>
+                                    <div class="uiIcon">
+                                        <span class="button button.primary--m" role="button"></span>
+                                        <svg class="svgIcon"></svg>
+                                    </div>
+                                </textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoPrimary/Icone/button-primary-icone.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-primary-icone">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                        </section>
+
+                        <section class="secao__botao___componentes">
+
+                            <section class="secao__visual___botao secao__visual___botao-space-between">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__secundary button__secundary-icone">
+
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#3E3AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M7 10L12 15L17 10" stroke="#3E3AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12 15V3" stroke="#3E3AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        
+                                        Button
+                                    
+                                    </button>
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Ícone Secundário</span>
+
+                                        <span class="classe__visual">.button__secundary-icone</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-secundary-icone" readonly>
+                                    <div class="uiIcon">
+                                        <span class="button button.secundary--m" role="button"></span>
+                                        <svg class="svgIcon"></svg>
+                                    </div>
+                                </textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoSecundary/Icone/button-secundary-icone.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-secundary-icone">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                        </section>
+
+                        <section class="secao__botao___componentes">
+
+                            <section class="secao__info___botao-componentes">
+
+                                <h4 class="titulo__info___botao-componentes">Botão hover</h4>
+
+                                <p class="descricao__info___botao-componentes">Botões hover recebem uma classe e um atributo <span class="classe__visual-16">.is-hover</span></p>
+
+                            </section>
+
+                            <section class="secao__visual___botao secao__visual___botao-space-between">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__primary button__primary-hover">
+
+                                        Button
+                                    
+                                    </button>
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Hover Primário</span>
+
+                                        <span class="classe__visual">.button__primary-hover</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-primary-hover" readonly>
+                                    <button class="button .button.primary--m .is-hover"></button>
+                                </textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoPrimary/Hover/button-primary-hover.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-primary-hover">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                        </section>
+
+                        <section class="secao__botao___componentes">
+
+                            <section class="secao__visual___botao secao__visual___botao-space-between">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__secundary button__secundary-hover">
+
+                                        Button
+                                    
+                                    </button>
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Hover Primário</span>
+
+                                        <span class="classe__visual">.button__secundary-hover</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-secundary-hover" readonly>
+                                    <button class="button .button.secundary--m .is-hover"></button>
+                                </textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoSecundary/Hover/botao-secundary-hover.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-secundary-hover">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                        </section>
+
+                        <section class="secao__botao___componentes">
+
+                            <section class="secao__info___botao-componentes">
+
+                                <h4 class="titulo__info___botao-componentes">Botão desabilitado</h4>
+
+                                <p class="descricao__info___botao-componentes">Botões desabilitados recebem uma classe e um atributo <span class="classe__visual-16">.is-disabled</span></p>
+
+                            </section>
+
+                            <section class="secao__visual___botao secao__visual___botao-space-between">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__primary button__primary-disabled">
+
+                                        Desabilitado
+                                    
+                                    </button>
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Desabilitado Secundário</span>
+
+                                        <span class="classe__visual">.button__primary-disabled</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-primary-disabled" readonly>
+                                    <button class="button .button.primary--m .is-disabled"></button>
+                                </textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoPrimary/Disabled/botao-primary-disabled.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-primary-disabled">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                        </section>
+
+                        <section class="secao__botao___componentes">
+
+                            <section class="secao__visual___botao secao__visual___botao-space-between">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__secundary button__secundary-disabled">
+
+                                        Desabilitado
+                                    
+                                    </button>
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Desabilitado Primário</span>
+
+                                        <span class="classe__visual">.button__secundary-disabled</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-secundary-disabled" readonly>
+                                    <button class="button .button.secundary--m .is-disabled"></button>
+                                </textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoSecundary/Disabled/botao-secundary-disabled.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-secundary-disabled">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                        </section>
+
+                        <section class="secao__botao___componentes">
+
+                            <section class="secao__info___botao-componentes">
+
+                                <h4 class="titulo__info___botao-componentes">Botão em carregamento</h4>
+
+                                <p class="descricao__info___botao-componentes">Botões desabilitados recebem uma classe e um atributo <span class="classe__visual-16">.is-loading</span></p>
+
+                            </section>
+
+                            <section class="secao__visual___botao secao__visual___botao-space-between">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__primary button__primary-loading">
+
+                                        <svg class="vetor-loading-primary" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2V6" stroke="#FDFEFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12 18V22" stroke="#FDFEFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M4.92999 4.92993L7.75999 7.75993" stroke="#FDFEFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M16.24 16.24L19.07 19.07" stroke="#FDFEFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M2 12H6" stroke="#FDFEFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M18 12H22" stroke="#FDFEFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M4.92999 19.07L7.75999 16.24" stroke="#FDFEFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M16.24 7.75993L19.07 4.92993" stroke="#FDFEFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+
+                                        Carregando
+                                    
+                                    </button>
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Carregando Primário</span>
+
+                                        <span class="classe__visual">.button__primary-loading</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-primary-loading" readonly>
+                                    <button class="button .button.primary--m .is-loading"></button>
+                                </textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoPrimary/Loading/button-primary-loading.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-primary-loading">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                        </section>
+
+                        <section class="secao__botao___componentes">
+
+                            <section class="secao__visual___botao secao__visual___botao-space-between">
+
+                                <div class="container__info___visual-botao">
+                                    <button class="button__secundary button__secundary-loading">
+
+                                        <svg class="vetor-loading-secundary" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2V6" stroke="#3E3AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12 18V22" stroke="#3E3AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M4.92999 4.92993L7.75999 7.75993" stroke="#3E3AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M16.24 16.24L19.07 19.07" stroke="#3E3AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M2 12H6" stroke="#3E3AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M18 12H22" stroke="#3E3AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M4.92999 19.07L7.75999 16.24" stroke="#3E3AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M16.24 7.75993L19.07 4.92993" stroke="#3E3AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+
+                                        Carregando
+                                    
+                                    </button>
+                                    <div class="texto__info___visual-botao">                                    
+                                        <span class="tipo__visual">Carregando Secundário</span>
+
+                                        <span class="classe__visual">.button__secundary-loading</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="button-secundary-loading" readonly>
+                                    <button class="button .button.secundary--m .is-loading"></button>
+                                </textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Botoes/ImagensCodigos/BotaoSecundary/Loading/botao-secundary-loading.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#button-secundary-loading">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                        </section>
+
+                    </section>
+
+                </section>
+
+                <section class="secao__formularios tabcontent" id="formularios">
+
+                    <section class="secao__tabs___formulario">
+
+                        <h4 class="titulo__tabs___formulario">Formulários</h4>
+
+                        <div class="container__tabs___formulario">
+
+                            <button class="botao__tab tablinks-formulario" id="defaultOpen-formulario" onclick="openTabFormulario(event, 'tamanho-entrada')">Tamanhos de entrada</button>
+
+                            <button class="botao__tab tablinks-formulario" onclick="openTabFormulario(event, 'estados-formulario')">Estados</button>
+
+                        </div>
+
+                    </section>
+
+                    <section class="secao__componentes___formularios tabcontent-formulario" id="tamanho-entrada">
+
+                        <section class="secao__formularios___componentes">
+
+                            <section class="secao__info___formularios-componentes">
+
+                                <h4 class="titulo__info___formularios-componentes">Campos de entrada</h4>
+
+                                <p class="descricao__info___formularios-componentes">Os campos de entrada vêm em quatro tamanhos que podem ser aplicados no próprio componente. <span class="classe__visual-16">.input--xl</span> <span class="classe__visual-16">.input--l</span> <span class="classe__visual-16">.input--m</span> <span class="classe__visual-16">.input--s</span></p>
+
+                            </section>
+
+                            <section class="secao__visual___formularios secao__visual___formularios-space-between">
+
+                                <div class="container__info___visual-formularios">
+                                    <div class="container__input___formularios">
+
+                                        <label for="Input" class="label__input___formularios label__formularios--xl">Label</label>
+
+                                        <input type="text" class="input__formularios input__formularios--xl" placeholder="Input">
+
+                                    </div>
+
+                                    <div class="texto__info___visual-formularios">                                    
+                                        <span class="tipo__visual">Extra Grande</span>
+
+                                        <span class="classe__visual">.input--xl</span>
+                                    </div>
+                                </div>
+
+                                <div class="container__info___visual-formularios">
+                                    <div class="container__input___formularios">
+
+                                        <label for="Input" class="label__input___formularios label__formularios--l">Label</label>
+
+                                        <input type="text" class="input__formularios input__formularios--l" placeholder="Input">
+
+                                    </div>
+
+                                    <div class="texto__info___visual-formularios">                                    
+                                        <span class="tipo__visual">Grande</span>
+
+                                        <span class="classe__visual">.input--l</span>
+                                    </div>
+                                </div>
+
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="input--xl-value" readonly><input class="input .input--xl" type="text"></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Formularios/Vetores/Tamanhos/vetor-imagem-input-extra-grande.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#input--xl-value">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="input--l-value" readonly><input class="input .input--l" type="text"></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Formularios/Vetores/Tamanhos/vetor-imagem-input-grande.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#input--l-value">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__visual___formularios secao__visual___formularios-space-between">
+
+                                <div class="container__info___visual-formularios">
+                                    <div class="container__input___formularios">
+
+                                        <label for="Input" class="label__input___formularios label__formularios--m">Label</label>
+
+                                        <input type="text" class="input__formularios input__formularios--m" placeholder="Input">
+
+                                    </div>
+
+                                    <div class="texto__info___visual-formularios">                                    
+                                        <span class="tipo__visual">Médio</span>
+
+                                        <span class="classe__visual">.input--m</span>
+                                    </div>
+                                </div>
+
+                                <div class="container__info___visual-formularios">
+                                    <div class="container__input___formularios">
+
+                                        <label for="Input" class="label__input___formularios label__formularios--s">Label</label>
+
+                                        <input type="text" class="input__formularios input__formularios--s" placeholder="Input">
+
+                                    </div>
+
+                                    <div class="texto__info___visual-formularios">                                    
+                                        <span class="tipo__visual">Pequeno</span>
+
+                                        <span class="classe__visual">.input--s</span>
+                                    </div>
+                                </div>
+
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="input--m-value" readonly><input class="input .input--m" type="text"></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Formularios/Vetores/Tamanhos/vetor-input-medio.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#input--m-value">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="input--s-value" readonly><input class="input .input--s" type="text"></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Formularios/Vetores/Tamanhos/vetor-input-pequeno.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#input--s-value">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+                            
+                        </section>
+                    </section>
+
+                    <section class="secao__componentes___formularios tabcontent-formulario" id="estados-formulario">
+
+                        <section class="secao__formularios___componentes">
+
+                            <section class="secao__info___formularios-componentes">
+
+                                <h4 class="titulo__info___formularios-componentes">Campos de entrada default</h4>
+
+                                <p class="descricao__info___formularios-componentes">Existe atualmente um estilo de entrada, que pode ser aplicado com uma classe <span class="classe__visual-16">.input--default</span></p>
+
+                            </section>
+
+                            <section class="secao__visual___formularios secao__visual___formularios-space-between">
+
+                                <div class="container__info___visual-formularios">
+                                    <div class="container__input___formularios">
+
+                                        <label for="Input" class="label__input___formularios label__formularios--m label__formularios--default">Label</label>
+
+                                        <input type="text" class="input__formularios input__formularios--m input__formularios--default" placeholder="Input">
+
+                                    </div>
+
+                                    <div class="texto__info___visual-formularios">                                    
+                                        <span class="tipo__visual">Médio default</span>
+
+                                        <span class="classe__visual">.input__formularios--default</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="input--default-value" readonly><input class="input .input--m input--default" type="text"></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Formularios/Vetores/Disabled/vetor-input-disabled.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#input--default-value">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+
+                            
+                        </section>
+
+                        <section class="secao__formularios___componentes">
+
+                            <section class="secao__info___formularios-componentes">
+
+                                <h4 class="titulo__info___formularios-componentes">Campos de entrada desativado</h4>
+
+                                <p class="descricao__info___formularios-componentes">As entradas desabilitadas recebem uma classe e um atributo <span class="classe__visual-16">.is-disabled disabled</span></p>
+
+                            </section>
+
+                            <section class="secao__visual___formularios secao__visual___formularios-space-between">
+
+                                <div class="container__info___visual-formularios">
+                                    <div class="container__input___formularios">
+
+                                        <label for="Input" class="label__input___formularios label__formularios--m label__formularios--disabled">Label</label>
+
+                                        <input type="text" class="input__formularios input__formularios--m input__formularios--disabled" placeholder="Input" disabled>
+
+                                    </div>
+
+                                    <div class="texto__info___visual-formularios">                                    
+                                        <span class="tipo__visual">Médio Desativado</span>
+
+                                        <span class="classe__visual">.input__formularios--disabled</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="input--disabled-value" readonly><input class="input .input--m input--default is-disabled" type="text" disabled></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Formularios/Vetores/Disabled/vetor-input-disabled.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#input--disabled-value">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+
+                            
+                        </section>
+
+                        <section class="secao__formularios___componentes">
+
+                            <section class="secao__info___formularios-componentes">
+
+                                <h4 class="titulo__info___formularios-componentes">Campos de entrada ativado</h4>
+
+                                <p class="descricao__info___formularios-componentes">Campos de entrada ativado recebem uma classe e um atributo<span class="classe__visual-16"> .is-active</span></p>
+
+                            </section>
+
+                            <section class="secao__visual___formularios secao__visual___formularios-space-between">
+
+                                <div class="container__info___visual-formularios">
+                                    <div class="container__input___formularios">
+
+                                        <label for="Input" class="label__input___formularios label__formularios--m label__formularios--is-active">Label</label>
+
+                                        <input type="text" class="input__formularios input__formularios--m is-active" placeholder="Input">
+
+                                    </div>
+
+                                    <div class="texto__info___visual-formularios">                                    
+                                        <span class="tipo__visual">Médio Ativado</span>
+
+                                        <span class="classe__visual">.is-active</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="input--is-active-value" readonly><input class="input .input--m input--default is-active" type="text"></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Formularios/Vetores/Active/vetor-input-active.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#input--is-active-value">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+
+                            
+                        </section>
+
+                        <section class="secao__formularios___componentes">
+
+                            <section class="secao__info___formularios-componentes">
+
+                                <h4 class="titulo__info___formularios-componentes">Campos de entrada erro</h4>
+
+                                <p class="descricao__info___formularios-componentes">Campos de entrada ativado recebem uma classe e um atributo <span class="classe__visual-16">.is-erro</span></p>
+
+                            </section>
+
+                            <section class="secao__visual___formularios secao__visual___formularios-space-between">
+
+                                <div class="container__info___visual-formularios">
+                                    <div class="container__input___formularios">
+
+                                        <label for="Input" class="label__input___formularios label__formularios--m label__formularios--is-erro">Label</label>
+
+                                        <input type="text" class="input__formularios input__formularios--m is-erro" placeholder="Input">
+
+                                        <span class="mensagem-erro">Mensagem de erro</span>
+                                    </div>
+
+                                    <div class="texto__info___visual-formularios">                                    
+                                        <span class="tipo__visual">Médio Erro</span>
+
+                                        <span class="classe__visual">.is-erro</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="input--is-erro-value" readonly><input class="input .input--m input--default is-erro" type="text"></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Formularios/Vetores/Erro/vetor-input-erro.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#input--is-erro-value">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+
+                            
+                        </section>
+
+                        <section class="secao__formularios___componentes">
+
+                            <section class="secao__info___formularios-componentes">
+
+                                <h4 class="titulo__info___formularios-componentes">Campos de entrada com ícone</h4>
+
+                                <p class="descricao__info___formularios-componentes">As entradas com ícones são agrupadas em um componente pai que deve ter o tamanho de entrada aplicado com uma classe adicional. Por exemplo, terá um elemento pai com uma classe . O ícone deve ser colocado logo após a entrada e deve ser um SVG embutido.  <span class="classe__visual-16">.uiIcon .input--m .uiIcon--m</span></p>
+
+                            </section>
+
+                            <section class="secao__visual___formularios secao__visual___formularios-space-between">
+
+                                <div class="container__info___visual-formularios">
+                                    <div class="container__input___formularios">
+
+                                        <label for="Input" class="label__input___formularios label__formularios--m label__formularios--icone-input">Label</label>
+
+                                        <input type="text" class="input__formularios input__formularios--m icone-input" placeholder="Input">
+                                        
+                                    </div>
+
+                                    <div class="texto__info___visual-formularios">                                    
+                                        <span class="tipo__visual">Médio ícone</span>
+
+                                        <span class="classe__visual">.icone-input</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="input--icone-input-value" readonly>
+                                    <div class="uiIcon uiIcon--m">
+                                    <input class="input input--m input--default" type="text" placeholder="...">
+                                    <svg class="svgIcon"></svg></div></textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Formularios/Vetores/Icone/vetor-input-icone.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#input--icone-input-value">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+
+                            
+                        </section>
+
+                        <section class="secao__formularios___componentes">
+
+                            <section class="secao__info___formularios-componentes">
+
+                                <h4 class="titulo__info___formularios-componentes">Área de texto</h4>
+
+                                <p class="descricao__info___formularios-componentes">Textareas vêm em quatro tamanhos que podem ser aplicados com , e no próprio componente . Atualmente, existe apenas um estilo que pode ser aplicado com<span class="classe__visual-16"> .textarea--xl .textarea--l .textarea--m .textarea--s .textarea .textarea--default </span></p>
+
+                            </section>
+
+                            <section class="secao__visual___formularios secao__visual___formularios-space-between">
+
+                                <div class="container__info___visual-formularios container__info___visual-textarea">
+                                    <div class="container__input___formularios">
+
+                                        <textarea class="input__formularios input__formularios--m input-textarea" cols="auto" rows="auto" placeholder="Escreva um comentário...."></textarea>
+                                        
+                                    </div>
+
+                                    <div class="texto__info___visual-formularios">                                    
+                                        <span class="tipo__visual">Médio ícone</span>
+
+                                        <span class="classe__visual">.input-textarea</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="secao__codigo">
+
+                                <textarea class="input__text___codigo" id="input--text-area-input-value" readonly>
+                                    <textarea class="textarea textarea--m textarea--default"></textarea>
+                                </textarea>
+
+                                <span class="texto__codigo">
+
+                                    <img src="./Assets/Formularios/Vetores/TextArea/vetor-input-textarea.png" alt="Imagem Tipografia" class="imagem__codigo">
+
+                                    <button class="botao__copia___codigo btn" data-clipboard-target="#input--text-area-input-value">
+
+                                        <svg class="vetor-copia-codigo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="vetor-copia-codigo" d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path class="vetor-copia-codigo" d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#131416" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                            
+                                    </button>
+
+                                </span>
+                                
+                            </section>
+
+
+                            
+                        </section>
+
+
+                    </section>
+
                 </section>
 
             </main>
 
+            <script src="./Componentes/componenteMenu.js" type="text/javascript"></script>
             <script src="./Componentes/tab.js" type="text/javascript"></script>
             <script src="./Componentes/ComponentesNavegacao/navegacao.js" type="text/javascript"></script>
             <script src="./Componentes/Introducao/sumaryFAQ.js" type="text/javascript"></script>
             <script src="./Componentes/Tipografia/tabTipografia.js" type="text/javascript"></script>
             <script src="./Componentes/Tipografia/copiaCódigo.js" type="text/javascript"></script>
             <script src="./Componentes/Colorimetria/tabColorimetria.js" type="text/javascript"></script>
+            <script src="./Componentes/Formulario/tabFormulario.js" type="text/javascript"></script>
+            <script src="./Componentes/Botoes/tabBotoes.js" type="text/javascript"></script>
             <script src="./Componentes/clipboard.js-master/dist/clipboard.min.js"></script>
             <script>
                 var clipboard = new ClipboardJS('.btn');
@@ -732,7 +2734,7 @@
                   console.info('Action:', e.action);
                   console.info('Text:', e.text);
                 });
-              </script>
+            </script>
     </body>
 
 </html>
